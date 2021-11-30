@@ -1,0 +1,94 @@
+.bucket-wrapper {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & .item-view {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 2;
+  }
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  text-align: right;
+  justify-content: flex-end;
+
+  & img {
+    width: 300px;
+    height: auto;
+  }
+}
+
+.center {
+  flex: 1;
+  text-align: left;
+  padding: 30px;
+
+  & h2.product-title {
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+
+  & p.product-description {
+    margin: 16px 0px;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  & a.button-view {
+    padding: 7px 10px;
+    border: 2px solid teal;
+    background-color: white;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #f8f4f4;
+    }
+  }
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  text-align: left;
+
+  & .price {
+    font-weight: 100;
+    font-size: 40px;
+    display: inline-block;
+  }
+
+  & .price-wrap {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* -- LANDSCAPE ONLY  -- */
+@media (min-width: 1024px) and (max-width: 1179px) {
+}
+
+/* -- PORTRAIT ONLY -- */
+@media (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* -- Mobile ONLY -- */
+@media (max-width: 767px) {
+  .wrapper {
+    padding: "10px 0px";
+  }
+
+  .right {
+    flex: 2;
+    justify-content: "center";
+  }
+}

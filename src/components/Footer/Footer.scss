@@ -1,0 +1,15 @@
+.footer-wrapper {
+  text-align: center;
+  padding: 10px;
+  background-color: #30343d;
+  color: #f1f1f1;
+  font-size: 16px;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  & p{
+    margin: 0 0 8px 0;
+  }
+}

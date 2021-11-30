@@ -1,0 +1,32 @@
+.sum-product {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sum-product-detail {
+  flex: 2;
+  display: flex;
+}
+
+.sum-image {
+  width: 100px;
+}
+
+.sum-detail {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.sum-productname {
+  font-size: 14px;
+}
+
+/* -- Mobile ONLY -- */
+@media (max-width: 767px) {
+  .sum-product {
+    flex-direction: column;
+  }
+}
