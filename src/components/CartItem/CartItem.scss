@@ -24,6 +24,16 @@
   font-size: 14px;
 }
 
+.add-container {
+  & div {
+    margin: 0 auto;
+  }
+
+  & div.error-container {
+    margin-top: 2px;
+  }
+}
+
 /* -- Mobile ONLY -- */
 @media (max-width: 767px) {
   .sum-product {

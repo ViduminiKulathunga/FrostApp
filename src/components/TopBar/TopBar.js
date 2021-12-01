@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Badge } from "@material-ui/core";
 import { ShoppingCartOutlined } from "@material-ui/icons";
 import { Link } from "react-router-dom";
@@ -7,9 +8,8 @@ import Cart from "../Cart/Cart";
 import "./TopBar.scss";
 
 const TopBar = () => {
-  const [quantity, setQuantity] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isInnerModalOpen, setIsInnerModalOpen] = useState(false);
+  const cartItemCount = useSelector((state) => state.data.cartItemCount);
 
   function closeModal() {
     setIsModalOpen(false);
@@ -29,7 +29,11 @@ const TopBar = () => {
         </div>
 
         <div className="shopping">
-          <Badge badgeContent={quantity} color="secondary" onClick={openModal}>
+          <Badge
+            badgeContent={cartItemCount}
+            color="secondary"
+            onClick={openModal}
+          >
             <ShoppingCartOutlined />
           </Badge>
         </div>

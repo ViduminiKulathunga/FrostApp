@@ -1,15 +1,13 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../../redux/actions/dataActions";
 import BucketProduct from "../BucketProduct/BucketProduct";
 import "./ProductList.scss";
-import LOADING from "../../images/loading.gif";
 
 const ProductList = () => {
   const productsAvailable = useSelector(
     (state) => state.data.productsAvailable
   );
-  const loading = useSelector((state) => state.UI.loading);
 
   const dispatch = useDispatch();
 

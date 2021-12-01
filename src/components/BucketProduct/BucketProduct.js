@@ -36,7 +36,11 @@ const BucketProduct = (props) => {
       <div className="right">
         <p className="price">${props.item.price}</p>
         <div className="price-wrap">
-          <AmountContainer stock={props.item.stock} id={props.id} />
+          <AmountContainer
+            item={props.item}
+            stock={props.item.stock}
+            id={props.id}
+          />
         </div>
       </div>
     </div>

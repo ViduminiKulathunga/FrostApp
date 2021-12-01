@@ -31,3 +31,10 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+/* -- Mobile ONLY -- */
+@media (max-width: 767px) {
+  .modal {
+    width: 300px;
+  }
+}

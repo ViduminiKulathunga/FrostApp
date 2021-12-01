@@ -83,12 +83,28 @@
 
 /* -- Mobile ONLY -- */
 @media (max-width: 767px) {
+  .bucket-wrapper {
+    flex-wrap: wrap;
+
+    & .item-view {
+      flex-wrap: wrap;
+    }
+  }
   .wrapper {
     padding: "10px 0px";
+  }
+
+  .left {
+    justify-content: center;
   }
 
   .right {
     flex: 2;
     justify-content: "center";
+    flex-wrap: wrap;
+
+    & .price {
+      margin: 0 0 0 25px;
+    }
   }
 }

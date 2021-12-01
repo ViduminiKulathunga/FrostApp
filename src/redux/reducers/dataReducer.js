@@ -1,9 +1,7 @@
 import {
   SET_PRODUCTS,
   SET_CURRENT_PRODUCT,
-  GET_CART_ITEMS,
   ADD_PRODUCT,
-  SET_REMOVE_PRODUCT,
   CHECKOUT,
 } from "../types";
 
@@ -11,6 +9,8 @@ const initialState = {
   productsAvailable: [],
   viewProduct: {},
   cartItems: [],
+  cartItemsKeys: [],
+  cartItemCount: 0,
 };
 
 function DataReducer(state = initialState, action) {
@@ -24,6 +24,20 @@ function DataReducer(state = initialState, action) {
       return {
         ...state,
         viewProduct: state.productsAvailable[action.payload],
+      };
+    case ADD_PRODUCT:
+      return {
+        ...state,
+        cartItemCount: state.cartItems.length + 1,
+        cartItems: [...state.cartItems, action.payload],
+        cartItemsKeys: [...state.cartItemsKeys, action.payload.id],
+      };
+    case CHECKOUT:
+      return {
+        ...state,
+        cartItems: [],
+        cartItemsKeys: [],
+        cartItemCount: 0,
       };
     default:
       return state;

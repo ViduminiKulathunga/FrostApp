@@ -1,9 +1,7 @@
 import {
   SET_PRODUCTS,
   SET_CURRENT_PRODUCT,
-  GET_CART_ITEMS,
   ADD_PRODUCT,
-  SET_REMOVE_PRODUCT,
   CHECKOUT,
   LOADING_UI,
   STOP_LOADING_UI,
@@ -22,8 +20,6 @@ export const getProducts = () => {
           return data;
         });
 
-      console.log(resData, " resDataresDataresData");
-
       dispatch({ type: SET_PRODUCTS, payload: resData });
       dispatch({ type: STOP_LOADING_UI });
     } catch (error) {
@@ -41,19 +37,29 @@ export const getSelectedProduct = (productId) => (dispatch) => {
   } catch (error) {
     dispatch({
       type: SET_ERRORS,
-      payload: { message: "Something Went wrong in the Server" },
+      payload: { message: "Something Went wrong when get selected product" },
     });
   }
 };
 
-// export const getcartItems = () => (dispatch) => {
-//   try {
-//     dispatch({ type: GET_CART_ITEMS, payload: currentPageNumber });
-//   } catch (error) {
-//     dispatch({
-//       type: SET_ERRORS,
-//       payload: { message: "Something Went wrong in the Server" },
-//     });
+export const puttItemsToCart = (pushProduct) => (dispatch) => {
+  try {
+    dispatch({ type: ADD_PRODUCT, payload: pushProduct });
+  } catch (error) {
+    dispatch({
+      type: SET_ERRORS,
+      payload: { message: "Something Went wrong when add to cart" },
+    });
+  }
+};
 
-//   }
-// };
+export const checkoutCart = () => (dispatch) => {
+  try {
+    dispatch({ type: CHECKOUT });
+  } catch (error) {
+    dispatch({
+      type: SET_ERRORS,
+      payload: { message: "Something Went wrong when checking out" },
+    });
+  }
+};

@@ -8,23 +8,20 @@
   border-radius: 12px;
   margin-left: 20px;
   flex-wrap: wrap;
-}
 
-.amount-container {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-}
+  & .button-viewcart {
+    padding: 15px;
+    border: 2px solid #10553e;
+    background-color: #077a75;
+    cursor: pointer;
+    margin: 0px auto;
+    color: white;
 
-.amount {
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
-  border: 1px solid teal;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0px 5px;
+    &:hover {
+      background-color: #f8f4f4;
+      color: rgb(11, 82, 82);
+    }
+  }
 }
 
 .button {
@@ -37,21 +34,35 @@
   &:hover {
     background-color: #f8f4f4;
   }
+
+  &:disabled {
+    color: #fff;
+    border-color: #a0a0a0;
+    background-color: #a0a0a0;
+    pointer-events: none;
+  }
 }
 
-.error-container {
-  padding: 10px;
-  display: flex;
-  background-color: #eb9696;
-  color: crimson;
-  flex-basis: 100%;
-  margin-top: 10px;
-  border-radius: 5px;
+/* -- LANDSCAPE ONLY  -- */
+@media (min-width: 1024px) and (max-width: 1179px) {
+  .button {
+    margin-top: 5px;
+  }
+}
+
+/* -- PORTRAIT ONLY -- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .button {
+    margin-top: 5px;
+  }
 }
 
 /* -- Mobile ONLY -- */
 @media (max-width: 767px) {
   .add-container {
     width: 100%;
+    padding: 5px;
+    flex-wrap: wrap;
+    margin: 0;
   }
 }
