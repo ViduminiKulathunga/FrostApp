@@ -4,7 +4,7 @@ import "./App.css";
 //Redux
 import { Provider } from "react-redux";
 import store from "./redux/store";
-//Pages
+//Pages 
 import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Success from "./pages/Success/Success";
